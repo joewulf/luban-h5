@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import { mapState, mapActions } from 'vuex'
 import { getVM, getComponentsForPropsEditor } from '../../../../utils/element'
+import RenderGlobalWorkPropsEditor from './props/global-work.vue'
 
 export default {
   data: () => ({
@@ -73,7 +74,7 @@ export default {
       const data = {
         // style: { width: '100%' },
         props: {
-          ...item.prop || {},
+          ...item.props || {},
           // https://vuejs.org/v2/guide/render-function.html#v-model
 
           // #!zh:不设置默认值的原因（下一行的代码，注释的代码）：
@@ -141,11 +142,14 @@ export default {
           }
         </a-form>
       )
+    },
+    renderWorkGlobalPropsPanel (h) {
+      return <RenderGlobalWorkPropsEditor />
     }
   },
   render (h) {
     const ele = this.editingElement
-    if (!ele) return (<span>{this.$t('editor.editPanel.common.empty')}</span>)
+    if (!ele) return this.renderWorkGlobalPropsPanel(h)
     this.mixinEnhancedPropsEditor(ele)
     return this.renderPropsEditorPanel(h, ele)
   },

@@ -10,7 +10,7 @@ import RenderPreviewCanvas from './canvas/preview'
 import RenderPropsEditor from './edit-panel/props'
 import RenderScriptEditor from './edit-panel/script'
 import RenderAnimationEditor from './edit-panel/animation'
-import RenderActoionEditor from './edit-panel/action'
+import RenderActionEditor from './edit-panel/action'
 import RenderBackgroundEditor from './edit-panel/background'
 import RenderShortcutsPanel from './shortcuts-panel/index'
 import RenderPageManager from './page-manager/index'
@@ -311,7 +311,7 @@ export default {
           <a-layout-sider width="240" theme='light' style={{ background: '#fff', padding: '12px' }}>
             { this._renderMenuContent() }
           </a-layout-sider>
-          <a-layout>
+          <a-layout id="canvas-outer-wrapper">
             <div class="mode-toggle-wrapper">
               <a-radio-group
                 size="small"
@@ -330,7 +330,9 @@ export default {
               </a-radio-group>
             </div>
             <a-layout-content style={{ transform: `scale(${this.scaleRate})`, 'transform-origin': 'center top' }}>
-              <div class='canvas-wrapper'>
+              <div class='canvas-wrapper' style={{
+                height: `${this.work.height}px`
+              }}>
                 {/* { this.isPreviewMode ? this.renderPreview(h, this.elements) : this.renderCanvas(h, this.elements) } */}
                 { this.isPreviewMode
                   ? <RenderPreviewCanvas elements={this.elements}/>
@@ -375,7 +377,7 @@ export default {
               */}
               <a-tab-pane key="属性"><span slot="tab">{this.$t('editor.editPanel.tab.prop')}</span><RenderPropsEditor/></a-tab-pane>
               <a-tab-pane label="动画" key='动画' tab={this.$t('editor.editPanel.tab.animation')}><RenderAnimationEditor /></a-tab-pane>
-              <a-tab-pane label="动作" key='动作' tab={this.$t('editor.editPanel.tab.action')}>{ this.activeTabKey === '动作' && <RenderActoionEditor/> }</a-tab-pane>
+              <a-tab-pane label="动作" key='动作' tab={this.$t('editor.editPanel.tab.action')}>{ this.activeTabKey === '动作' && <RenderActionEditor/> }</a-tab-pane>
               <a-tab-pane label="脚本" key='脚本' tab={this.$t('editor.editPanel.tab.script')}><RenderScriptEditor/></a-tab-pane>
               <a-tab-pane label="背景" key='background' tab={this.$t('editor.editPanel.tab.background')}>{ this.activeTabKey === 'background' && <RenderBackgroundEditor/> }</a-tab-pane>
             </a-tabs>

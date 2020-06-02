@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.10.0](https://github.com/ly525/luban-h5/compare/v1.9.0...v1.10.0) (2020-05-17)
+
+
+### Features
+
+* **component:** 增加公告组件; ([e839d9c](https://github.com/ly525/luban-h5/commit/e839d9c))
+* **PropTypes:** upgrade PropTypes from object to function; #!zh: 升级 PropTypes: 更新为函数, 便于后期扩展 ([30b9692](https://github.com/ly525/luban-h5/commit/30b9692))
+
+## [1.9.0](https://github.com/ly525/luban-h5/compare/v1.8.3...v1.9.0) (2020-05-10)
+
+
+### Bug Fixes
+
+*  confirm the  firstState for the undoRedoPlugin ([a968260](https://github.com/ly525/luban-h5/commit/a968260))
+* [#155](https://github.com/ly525/luban-h5/issues/155) ([fc8ffc4](https://github.com/ly525/luban-h5/commit/fc8ffc4))
+* add Ps text ([5ace866](https://github.com/ly525/luban-h5/commit/5ace866))
+* not show background image or color ([b40b2dd](https://github.com/ly525/luban-h5/commit/b40b2dd))
+
+
+### Features
+
+* support long page mode(alpha); ([722031c](https://github.com/ly525/luban-h5/commit/722031c))
+* 添加快捷键+更完整的辅助线提示 ([#148](https://github.com/ly525/luban-h5/issues/148)) add shortcuts for editor and more guidelines ([d039dcb](https://github.com/ly525/luban-h5/commit/d039dcb))
+
 ### [1.8.3](https://github.com/ly525/luban-h5/compare/v1.8.2...v1.8.3) (2020-02-19)
 
 

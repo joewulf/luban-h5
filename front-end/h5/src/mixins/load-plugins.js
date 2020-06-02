@@ -11,8 +11,44 @@ import LbpFormCheckboxGroup from '../components/plugins/lbp-form-checkbox-group'
 import LbpBackground from '../components/plugins/lbp-background'
 import LbpSlide from '../components/plugins/lbp-slide'
 import LbpBgMusic from '../components/plugins/lbp-bg-music'
+import LbpNoticeBar from '../components/plugins/lbp-notice-bar'
+import LbpRate from '../components/plugins/lbp-rate'
+// import LbpTabs from '../components/plugins/lbp-tabs'
 
 export const pluginsList = [
+  {
+    title: '公告',
+    i18nTitle: {
+      'en-US': 'Notice-Bar',
+      'zh-CN': '公告'
+    },
+    icon: 'volume-up',
+    component: LbpNoticeBar,
+    visible: true,
+    name: LbpNoticeBar.name
+  },
+  // {
+  //   title: '标签页',
+  //   i18nTitle: {
+  //     'en-US': 'Tabs',
+  //     'zh-CN': '标签页'
+  //   },
+  //   icon: 'tab',
+  //   component: LbpTabs,
+  //   visible: true,
+  //   name: LbpTabs.name
+  // },
+  {
+    title: '评分',
+    i18nTitle: {
+      'en-US': 'Rate',
+      'zh-CN': '评分'
+    },
+    icon: 'star-o',
+    component: LbpRate,
+    visible: true,
+    name: LbpRate.name
+  },
   {
     title: '图片',
     i18nTitle: {
